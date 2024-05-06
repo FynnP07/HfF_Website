@@ -12,8 +12,8 @@ footer {
     left: 0;
     right: 0;
     align-items: center;
-    background-color: var(--gray);
-    color: var(--white);
+    background-color: gray;
+    color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -30,6 +30,7 @@ footer section {
 
 footer section * {
     border-radius: 0.25em;
+	margin-top: 5px;
 }
 
 
