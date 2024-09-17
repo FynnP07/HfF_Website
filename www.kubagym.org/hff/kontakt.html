@@ -18,18 +18,54 @@
 
 <body>
     <nav>
-        <a href="index.html">
-            <img class="logo" src="img/branding/logo-text.png" alt="logo" />
-        </a>
+                <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/nav.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/lang.css" />
+    <a href="index.html">
+        <img class="logo" src="img/branding/logo-text.png" alt="logo" width="100%" height="50em" />
+    </a>
 
-        <ul>
-            <li class="mainli"><a href="index.html">Start</a></li>
-            <li class="mainli">
-                <a href="kontakt.html" class="active">Kontakt</a>
-            </li>
-        </ul>
+    <ul>
+        <li class="mainli"><a href="index.html">Start</a></li>
+        <li class="mainli"><a href="kontakt.html" class="active">Kontakt</a></li>
+        <li class="mainli" id="language-dropdown">
+            <a href="#">Language</a>
+            <ul id="language-menu" class="hidden">
+                <li><a href="index.html">Deutsch</a></li>
+                <li><a href="C:\Users\fadri\Desktop\Website eng\hff_website_adsn-main\www.kubagym.org\hff\index-eng.html">English</a></li>
+                <!-- weitere Sprachoptionen hier -->
+            </ul>
+        </li>
+    </ul>
     </nav>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var languageDropdown = document.getElementById("language-dropdown");
+    var languageMenu = document.getElementById("language-menu");
 
+    // Zeige Dropdown-Menü beim Klicken auf das Language-Element
+    languageDropdown.addEventListener("click", function(event) {
+        event.stopPropagation(); // Verhindert das Schließen des Menüs beim Klicken auf das Element
+
+        if (languageMenu.classList.contains("active")) {
+            languageMenu.classList.remove("active");
+        } else {
+            languageMenu.classList.add("active");
+        }
+    });
+
+    // Verberge Dropdown-Menü, wenn der Benutzer außerhalb des Menüs klickt
+    document.addEventListener("click", function(event) {
+        if (!languageDropdown.contains(event.target) && !languageMenu.contains(event.target)) {
+            languageMenu.classList.remove("active");
+        }
+    });
+});
+
+</script>
+    
     <section class="banner" style="background-image: url(img/banner.png);">
         <div>
             <h1>
@@ -55,6 +91,29 @@
         </article>
     </section>
 
-<iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="350em"></iframe>
+    <footer>
+        <section>
+            <p>
+                <a href="https://www.kubagym.org/"><img src="img/branding/Logo%20KUBAGYMneu.jpg" style="width: 15em" /></a>
+                <a href="https://www.mint-ec.de"><img src="img/branding/MINT-EC-Logo.jpg" style="width: 15em" /></a>
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Hydrogen For Future ist eine Kampagne des Kurfürst-Balduin-Gymnasiums Münstermaifeld
+                <br /><br /> Projektleitung: Wolfgang Schäfer
+                <br />
+                <a href="mailto:wschaefer@kubagym.org">wschaefer@kubagym.org</a>
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Webseite entwickelt von Daniel Wolbach und Mathias Lief<br /> © Copyright 2020
+                <br /> <br />
+            </p>
+        </section>
+    </footer>
 </body>
 </html>
