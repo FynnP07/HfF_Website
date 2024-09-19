@@ -29,33 +29,7 @@
              </li>
          </ul>
     </nav>
-    
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    var languageDropdown = document.getElementById("language-dropdown");
-    var languageMenu = document.getElementById("language-menu");
 
-    // Zeige Dropdown-Menü beim Klicken auf das Language-Element
-    languageDropdown.addEventListener("click", function(event) {
-        event.stopPropagation(); // Verhindert das Schließen des Menüs beim Klicken auf das Element
-
-        if (languageMenu.classList.contains("active")) {
-            languageMenu.classList.remove("active");
-        } else {
-            languageMenu.classList.add("active");
-        }
-    });
-
-    // Verberge Dropdown-Menü, wenn der Benutzer außerhalb des Menüs klickt
-    document.addEventListener("click", function(event) {
-        if (!languageDropdown.contains(event.target) && !languageMenu.contains(event.target)) {
-            languageMenu.classList.remove("active");
-        }
-    });
-});
-
-</script>
-    
     <section class="banner" style="background-image: url(img/banner.png);">
         <div>
             <h1>
